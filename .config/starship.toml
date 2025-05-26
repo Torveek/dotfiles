@@ -1,0 +1,78 @@
+# ~/.config/starship.toml
+
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 10
+
+# Disable the blank line at the start of the prompt
+add_newline = true
+
+# 
+# Use custom format
+format = """
+[](fg:#323437)\
+[   ](bg:#323437 fg:#AFAFAF)\
+[](bg:#0088BB fg:#323437)\
+[ $directory ](bg:#0088BB fg:#000000)\
+[ ](fg:#0088BB)\
+$line_break\
+"""
+
+right_format = """
+$character\
+$symbol\
+$python\
+$git_branch\
+$git_state\
+$git_status\
+$cmd_duration\
+"""
+
+[character]
+success_symbol = "[✔](green)"
+error_symbol = "[✘](red)" # ❯
+vimcmd_symbol = "[λ](blue)" # ❮
+
+[username]
+show_always = true
+style_user = "bg:color_orange fg:color_fg0"
+style_root = "bg:color_orange fg:color_fg0"
+format = '[ $user]($style)'
+
+[hostname]
+ssh_only = false
+format = '[$hostname ]($style)'
+style = 'bold gray'
+
+[directory]
+format = '[$path]($style)'
+home_symbol = "~"
+truncation_length = 4
+truncation_symbol = "…/"
+style = 'bold gray'
+
+[directory.substitutions]
+"Desktop" = " "
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Code" = " "
+"Pictures" = " "
+
+[cmd_duration]
+format = "took [$duration]($style) "
+style = "yellow"
+
+[python]
+symbol = ''
+style = "fg:#000000 bg:#18C429"
+format = ' [](fg:#18C429)[ $symbol $virtualenv ]($style)[](fg:#18C429)'
+
+[git_branch]
+symbol = ""
+style = "fg:#000000 bg:#18C429"
+format = ' [](fg:#18C429)[ $symbol $branch ]($style)[](fg:#18C429 bg:#FF3F3F)'
+
+[git_status]
+style = "fg:#000000 bg:#FF3F3F"
+format = '[$all_status$ahead_behind ]($style)[](fg:#FF3F3F)'
+

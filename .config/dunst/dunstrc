@@ -1,0 +1,121 @@
+# Global Configuration
+[global]
+    # Display and Positioning
+    monitor = 0                     # Primary monitor
+    follow = mouse                  # Follow mouse position
+    origin = bottom-right           # Notification placement
+    offset = 8x8                    # Offset from screen edge
+    layer = top
+
+    # Notification Size and Dimensions
+    width = (0, 500)                # Min and max width
+    progress_bar = true             # Enable progress bars
+    progress_bar_height = 6         # Progress bar height
+    progress_bar_min_width = 100    # Minimum progress bar width
+    progress_bar_max_width = 250    # Maximum progress bar width
+    progress_bar_corner_radius = 4  # Progress bar corner roundness
+
+    # Visual Appearance
+    corner_radius = 9                # Notification corner roundness
+    separator_height = 2             # Separator line thickness
+    separator_color = "#11111B"      # Separator color
+    padding = 15                     # Internal padding
+    horizontal_padding = 15          # Horizontal internal padding
+    frame_width = 2                  # Frame border thickness
+
+    # Text Formatting
+    font = Ubuntu Nerd Font 11.25   # Default font
+    format = "<span weight='bold' font='13.25'>%s</span>\n%b"  # Title and body format
+    alignment = left                 # Text alignment
+    vertical_alignment = center      # Vertical text alignment
+    line_height = 0                  # Line spacing
+    word_wrap = yes                  # Wrap long text
+    ellipsize = middle               # Truncate long text
+
+    # Notification Behavior
+    indicate_hidden = yes            # Show count of hidden notifications
+    shrink = no                      # Don't shrink notifications
+    idle_threshold = 120             # Idle time before marking as idle
+    sort = yes                       # Sort notifications
+    show_age_threshold = 60          # Show age if older than 60 seconds
+    stack_duplicates = true          # Stack duplicate notifications
+    hide_duplicate_count = false     # Show duplicate count
+
+    # Icon Configuration
+    icon_position = left             # Icon placement
+    min_icon_size = 48               # Minimum icon size
+    max_icon_size = 56               # Maximum icon size
+    icon_path = $HOME/.local/share/icons/dunst  # Icon directory
+
+    # History and Advanced Options
+    sticky_history = yes             # Keep notification history
+    history_length = 20              # Maximum history entries
+    always_run_script = true         # Always run scripts
+
+    # Mouse Actions
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+
+# Experimental Section
+[experimental]
+    per_monitor_dpi = false          # Disable per-monitor DPI scaling
+
+# Urgency Levels
+[urgency_low]
+    background = "#020A0FAF"
+    foreground = "#F5F5F5"
+    highlight = "#64B5F6"
+    frame_color = "#4748519F"
+    max_icon_size = 72
+    timeout = 7
+
+[urgency_normal]
+    default_icon = "$HOME/.local/share/icons/dunst/info.png"
+    background = "#121315C6"
+    foreground = "#FFFFFF"
+    highlight = "#DFEFFE"
+    frame_color = "#4748519F"
+    max_icon_size = 48
+    timeout = 20
+
+[urgency_critical]
+    default_icon = "$HOME/.local/share/icons/dunst/caution.png"
+    background = "#121315DD"
+    foreground = "#FFBB44"
+    highlight = "#FF6633"
+    frame_color = "#FF663358"
+    max_icon_size = 64
+    timeout = 1000
+
+# Special Notification Config
+[play_sound]
+    msg_urgency = "normal"
+    script = ~/.local/bin/notify-sound
+
+[system]
+    appname = "System"
+    default_icon = "$HOME/.local/share/icons/dunst/arch.png"
+    timeout = 5
+
+[gamemode]
+    appname = "gamemode"
+    default_icon = "$HOME/.local/share/icons/dunst/gamemode.png"
+    timeout = 5
+
+[mic_low]
+    appname = "Mic"
+    msg_urgency = "low"
+    max_icon_size = 72
+    default_icon = "$HOME/.local/share/icons/dunst/mic-off.png"
+
+[mic_high]
+    appname = "Mic"
+    msg_urgency = "normal"
+    max_icon_size = 72
+    default_icon = "$HOME/.local/share/icons/dunst/mic-on.png"
+
+[volume]
+    appname = "Volume"
+    max_icon_size = 72
+
